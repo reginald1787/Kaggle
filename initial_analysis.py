@@ -213,23 +213,6 @@ def featuredata(table,feature_key,feature_dict):
 	#label = (train['repeater']=='t').astype(int)
 	return data
 
-def score(predict,label):
-	n = len(predict)
-	if n == len(label):
-		#nonzero = np.subtract(predict,label)
-		predict-=label
-		#correct = nonzero[nonzero==0]
-		correct = predict[predict==0]
-		
-		return float(len(correct))/n
-	else:
-		print 'error in length'
-		return 0
-
-def contigency_test():
-	train = pd.read_csv('trainHistory.csv')
-	table = pd.DataFrame({})
-
 
 if __name__ == '__main__':
 
